@@ -1,0 +1,20 @@
+server:
+  port: 18102
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:18100/eureka/
+
+spring:
+  application:
+    name: service-zuul
+    
+zuul:
+  routes:
+    api-interface:
+      path: /api-interface/**
+      serviceId: service-vinterface
+    api-admin:
+      path: /api-admin/**
+      serviceId: service-vadmin

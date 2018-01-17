@@ -1,0 +1,35 @@
+server:
+  port: 18107
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:18100/eureka/
+
+spring:
+  application:
+    name: service-vadmin
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/webtest
+#    username: root
+#    password: at0594
+#    driverClassName: com.mysql.jdbc.Driver
+#  jpa:
+#    database: MYSQL
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL5Dialect      
+  cloud:
+    config: 
+      profile: dev
+      label: master
+      discovery:
+        enabled: true #开启通过服务来访问Config Server的功能
+        service_id: service-config
+feign:
+  hystrix:
+    enabled: true    
