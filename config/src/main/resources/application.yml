@@ -1,0 +1,31 @@
+server:
+  port: 18101
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://xiaoxian:123456@192.168.1.199:18100/eureka/
+  
+spring:
+  application:
+    name: service-config
+  cloud:
+    config:
+      server:
+        svn: 
+          uri: http://192.168.1.27:8443/svn/scv
+          searchPaths: respo
+          username: chenjx
+          password: chenjx123
+        default-label: trunk
+  profiles:
+    active: subversion
+#  cloud:
+#    config:
+#      server:
+#        git: 
+#          uri: https://github.com/xiaoxian075/scv-config.git
+#          searchPaths: respo
+#          username:
+#          password:
+#    label: master

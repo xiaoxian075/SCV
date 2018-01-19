@@ -4,7 +4,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:18100/eureka/
+      defaultZone: http://xiaoxian:123456@192.168.1.199:18100/eureka/
 
 spring:
   application:
@@ -25,8 +25,8 @@ spring:
 #        dialect: org.hibernate.dialect.MySQL5Dialect
   cloud:
     config:
-      profile: dev
-      label: master
+      profile: pro
+      label: trunk
       discovery:
         enabled: true #开启通过服务来访问Config Server的功能
         service_id: service-config

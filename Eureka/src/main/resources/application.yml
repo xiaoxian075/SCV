@@ -4,7 +4,13 @@ server:
 spring:
   application:
     name: service-config
-    
+security:
+  basic:
+    enabled: true
+  user:
+    name: xiaoxian
+    password: 123456
+        
 eureka:
   instance:
     hostname: localhost
@@ -12,4 +18,9 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #defaultZone: http://xiaoxian:123456@localhost:18100/eureka/
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 10000
+   
