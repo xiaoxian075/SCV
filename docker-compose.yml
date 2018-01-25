@@ -1,0 +1,23 @@
+eureka:
+  image: eureka2
+  net: "backend"
+  ports: 
+    - "18100:18100"
+    
+zuul:
+  image: zuul2
+  net: "backend"
+  ports: 
+    - "18102:18102"
+    
+interface:
+  image: interface2
+  net: "backend"
+  ports: 
+    - "18106:18106"
+    
+admin:
+  image: admin2
+  net: "backend"
+  ports: 
+    - "18107:18107"             

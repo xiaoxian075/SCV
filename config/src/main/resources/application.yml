@@ -1,10 +1,5 @@
 server:
-  port: 18101
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://xiaoxian:123456@192.168.253.199:18100/eureka/
+  port: 8868
   
 spring:
   application:
