@@ -49,15 +49,13 @@ public class TestController {
     }
     
     
-    @Value("${ip}")
-    private String ip;
-    @Value("${port}")
+    @Value("${eureka.client.serviceUrl.defaultZone}")
+    private String url;
+    @Value("${server.port}")
     private String port;
-    @Value("${name}")
-    private String name;
 
     @RequestMapping("/getProperties")
     public String getProperties(){
-        return name + " " + ip + " : " + port;
+        return url + " : " + port;
     }
 }
