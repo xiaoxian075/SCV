@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scv.vadmin.feign.VInterfaceTest;
+import com.scv.vadmin.globle.RabbitmqTest;
 
 
 
@@ -58,4 +59,12 @@ public class TestController {
     public String getProperties(){
         return url + " : " + port;
     }
+    
+    
+
+	@RequestMapping("/testRabbitmq")
+	public String testRabbitmq(@RequestParam(value = "msg") String msg) {
+		RabbitmqTest.getInstance().sendMsg(msg);
+		return "OK";
+	}
 }

@@ -41,7 +41,4 @@ public class VocInterfaceApplication {
 	MessageListenerAdapter listenerAdapter() {
 		return new MessageListenerAdapter(new RedisHandler(), RedisHandler.FUNCTION_NAME);
 	}
-	
-	
-
 }
