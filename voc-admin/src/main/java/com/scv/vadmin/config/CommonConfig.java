@@ -24,6 +24,7 @@ public class CommonConfig implements CommandLineRunner {
 	
 	@Autowired
     private RedisTemplate<String, String> template;
+	//private StringRedisTemplate redis;
 	
 	@Autowired
     private AmqpTemplate rabbitTemplate;
